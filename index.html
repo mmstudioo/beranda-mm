@@ -1,11 +1,18 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portofolio mmstudio</title>
-    <link href="dist/output.css" rel="stylesheet">
+    <link href="./dist/css/final.css" rel="stylesheet">
+    <script>
+        if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+        document.documentElement.classList.add('dark')
+        } else {
+        document.documentElement.classList.remove('dark')
+        }
+    </script>
 </head>
 <body>
     <!-- header start -->
@@ -21,25 +28,39 @@
                         <span class="hamburger-line transition duration-300 ease-in-out"></span>
                         <span class="hamburger-line transition duration-300 ease-in-out origin-bottom-left"></span>
                     </button>
-                    <nav id="nav-menu" class="hidden absolute py-5 bg-white shadow-lg rounded-lg max-w-[250px] w-full right-4 top-full lg:block lg:static lg:bg-transparent lg:max-w-full lg:shadow-none lg:rounded-none">
+                    <nav id="nav-menu" class="hidden absolute py-5 bg-white shadow-lg rounded-lg max-w-[250px] w-full right-4 top-full lg:block lg:static lg:bg-transparent lg:max-w-full lg:shadow-none lg:rounded-none dark:bg-dark lg:dark:bg-transparent dark:shadow-slate-500">
                         <ul class="block lg:flex">
                             <li class="group">
-                                <a href="#home" class="text-base text-dark py-2 mx-8 flex group-hover:text-primary">Beranda</a>
+                                <a href="#home" class="text-base text-dark py-2 mx-8 flex group-hover:text-primary dark:text-white">Beranda</a>
                             </li>
                             <li class="group">
-                                <a href="#about" class="text-base text-dark py-2 mx-8 flex group-hover:text-primary">Tentang kami</a>
+                                <a href="#about" class="text-base text-dark py-2 mx-8 flex group-hover:text-primary dark:text-white">Tentang kami</a>
                             </li>
                             <li class="group">
-                                <a href="#galery" class="text-base text-dark py-2 mx-8 flex group-hover:text-primary">Galery</a>
+                                <a href="#galery" class="text-base text-dark py-2 mx-8 flex group-hover:text-primary dark:text-white">Galery</a>
                             </li>
                             <li class="group">
-                                <a href="#client" class="text-base text-dark py-2 mx-8 flex group-hover:text-primary">Client</a>
+                                <a href="#client" class="text-base text-dark py-2 mx-8 flex group-hover:text-primary dark:text-white">Client</a>
                             </li>
                             <li class="group">
-                                <a href="#blog" class="text-base text-dark py-2 mx-8 flex group-hover:text-primary">Blog</a>
+                                <a href="#blog" class="text-base text-dark py-2 mx-8 flex group-hover:text-primary dark:text-white">Blog</a>
                             </li>
                             <li class="group">
-                                <a href="#contact" class="text-base text-dark py-2 mx-8 flex group-hover:text-primary">Contact</a>
+                                <a href="#contact" class="text-base text-dark py-2 mx-8 flex group-hover:text-primary dark:text-white">Contact</a>
+                            </li>
+                            <li class="mt-3 lg:mt-0 flex items-center ml-4">
+                                <div class="flex">
+                                    <span class="mr-2 text-sm text-slate-500">light</span>
+                                    <input type="checkbox" class="hidden" id="dark-toggle">
+                                    <label for="dark-toggle">
+                                        <div class="flex h-5 w-9 cursor-pointer items-center rounded-full bg-slate-500 p-1">
+                                            <div class="toggle-circle h-4 w-4 rounded-full bg-white transition duration-300 ease-in-out">
+
+                                            </div>
+                                        </div>
+                                    </label>
+                                    <span class="ml-2 text-sm text-slate-500">dark</span>
+                                </div>
                             </li>
                         </ul>
                     </nav>
@@ -50,20 +71,20 @@
     <!-- header end -->
 
     <!-- hero section start -->
-    <section id="home" class="pt-36">
+    <section id="home" class="pt-36 dark:bg-dark">
         <div class="container">
             <div class="flex flex-wrap">
                 <div class="w-full self-center px-4 lg:w-1/2">
-                    <h1 class="text-base font-semibold text-primary md:text-lg lg:text-2xl">Hallo semua 🖐, <span class="block font-bold text-dark text-4xl mt-1 lg:text-5xl">Kami MM studio</span></h1>
-                    <h2 class="font-medium text-secondary lg:text-lg mb-5">3D design | Animation | <span class="text-dark">Development</span></h2>
-                    <p class="font-medium text-secondary mb-10 leading-relaxed">Kami akan membantu anda membuat design <span class="text-dark font-bold">impian anda!</span></p>
+                    <h1 class="text-base font-semibold text-primary md:text-lg lg:text-2xl">Hallo semua 🖐, <span class="block font-bold text-dark text-4xl mt-1 lg:text-5xl dark:text-white">Kami MM studio</span></h1>
+                    <h2 class="font-medium text-secondary lg:text-lg mb-5">3D design | Animation | <span class="text-dark dark:text-white">Development</span></h2>
+                    <p class="font-medium text-secondary mb-10 leading-relaxed">Kami akan membantu anda membuat design <span class="text-dark font-bold dark:text-white">impian anda!</span></p>
 
                     <a href="#" class="text-base font-semibold text-white bg-primary py-3 px-8 rounded-full hover:shadow-lg hover:opacity-80 transition duration-300 ease-in-out">Hubungi kami</a>
                 </div>
                 <div class="w-full self-end px-4 lg:w-1/2">
                     <div class="mt-10 relative lg:mt-9 lg:right-0">
-                        <img src="img/technology10-removebg-preview.png" alt="mm studio" class="max-w-full mx-auto">
-                        <span class="absolute -bottom-20 md:-bottom-10 -z-10 left-1/2 -translate-x-1/2 md:scale-125">
+                        <img src="img/technology10-removebg-preview.png" alt="mm studio" class="max-w-full mx-auto relative z-10">
+                        <span class="absolute -bottom-20 md:-bottom-10 left-1/2 -translate-x-1/2 md:scale-125">
                             <svg width="400" height="400" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
                                 <path fill="#FF0066" d="M54.5,-60.4C67.2,-54.3,71.6,-33.9,70.7,-15.9C69.8,2,63.4,17.5,54.9,31.1C46.3,44.7,35.6,56.5,23,59.5C10.4,62.4,-4,56.6,-18.6,51.2C-33.1,45.9,-47.7,40.9,-59.3,29.9C-70.9,18.8,-79.5,1.7,-79.5,-16.8C-79.6,-35.2,-71.1,-55,-56.5,-60.7C-41.8,-66.5,-20.9,-58.3,0,-58.3C20.9,-58.3,41.8,-66.6,54.5,-60.4Z" transform="translate(100 100) scale(.8)" />
                               </svg>
@@ -76,16 +97,16 @@
     <!-- hero section end -->
 
     <!-- about section start -->
-    <section id="about" class="pt-36 pb-32">
+    <section id="about" class="pt-36 pb-32 dark:bg-dark">
         <div class="container">
             <div class="flex flex-wrap">
                 <div class="w-full px-4 mb-10 lg:w-1/2">
                     <h3 class="font-bold uppercase text-primary text-lg mb-3">Tentang kami</h3>
-                    <h2 class="font-bold text-dark text-3xl mb-5 max-w-md lg:text-4xl">Penyedia layanan 3D desain</h2>
+                    <h2 class="font-bold text-dark text-3xl mb-5 max-w-md lg:text-4xl dark:text-white">Penyedia layanan 3D desain</h2>
                     <p class="font-medium text-base text-secondary max-w-xl lg:text-lg">Kami adalah penyedia layanan jasa desain grafis khususnya 3D desain | animation | development, disini anda bisa melakukan order/costume desain 3D anda.</p>
                 </div>
                 <div class="w-full px-4 lg:w-1/2">
-                    <h3 class="font-semibold text-dark text-2xl mb-4 lg:text-3xl lg:scroll-pt-10">Mari berteman</h3>
+                    <h3 class="font-semibold text-dark text-2xl mb-4 lg:text-3xl lg:scroll-pt-10 dark:text-white">Mari berteman</h3>
                     <p class="font-medium text-base text-secondary max-w-xl mb-6 lg:text-lg">Sebagai layanan jasa desain, kami juga mempunyai akun social media, Untuk berkenalan lebih dekat, ikuti akun social media kami.</p>
                     <div class="flex items-center">
                         <!-- youtube -->
@@ -116,11 +137,11 @@
     <!-- about section end -->
 
     <!-- galery section start -->
-    <section id="galery" class="pt-36 pb-16 bg-slate-100">
+    <section id="galery" class="pt-36 pb-16 bg-slate-100 dark:bg-slate-800">
         <div class="w-full p-4">
             <div class="max-w-xl mx-auto text-center mb-16">
                 <h4 class="font-semibold text-lg text-primary mb-2">Galery</h4>
-                <h2 class="font-bold text-dark text-3xl mb-4 sm:text-4xl lg:text-5xl">Project Terbaru</h2>
+                <h2 class="font-bold text-dark text-3xl mb-4 sm:text-4xl lg:text-5xl dark:text-white">Project Terbaru</h2>
                 <p class="font-medium text-md text-secondary md:text-lg">Berikut adalah galery hasil project terbaru yang sudah kami kerjakan</p>
             </div>
 
@@ -130,28 +151,28 @@
                     <div class="rounded-md shadow-md overflow-hidden">
                         <img src="img/galery/1.png" alt="Costum 3D design" class="w-full">
                     </div>
-                    <h3 class="font-semibold text-xl mt-5 mb-3">Costum 3D design</h3>
+                    <h3 class="font-semibold text-xl mt-5 mb-3 dark:text-white">Costum 3D design</h3>
                     <p class="font-medium text-base text-secondary">Dengan costum design anda bisa saja membuat apapun yang anda inginkan.</p>
                 </div>
                 <div class="mb-12 p-4 md:w-1/2">
                     <div class="rounded-md shadow-md overflow-hidden">
                         <img src="img/galery/3.PNG" alt="3D NFT design" class="w-full">
                     </div>
-                    <h3 class="font-semibold text-xl mt-5 mb-3">3D NFT design</h3>
+                    <h3 class="font-semibold text-xl mt-5 mb-3 dark:text-white">3D NFT design</h3>
                     <p class="font-medium text-base text-secondary">NFT 3D design merupakan fitur terbaru di dunia metaverse, yuk buat nft design dengan kami</p>
                 </div>
                 <div class="mb-12 p-4 md:w-1/2">
                     <div class="rounded-md shadow-md overflow-hidden">
                         <img src="img/galery/7.png" alt="3D character" class="w-full">
                     </div>
-                    <h3 class="font-semibold text-xl mt-5 mb-3">3D character | animation</h3>
+                    <h3 class="font-semibold text-xl mt-5 mb-3 dark:text-white">3D character | animation</h3>
                     <p class="font-medium text-base text-secondary">Anda bisa membuat character anda sendiri, baik itu human, animal, anime caracter dan anda bisa menambahkan sedikit animasi.</p>
                 </div>
                 <div class="mb-12 p-4 md:w-1/2">
                     <div class="rounded-md shadow-md overflow-hidden">
                         <img src="img/galery/6.jpg" alt="3D isometric env" class="w-full">
                     </div>
-                    <h3 class="font-semibold text-xl mt-5 mb-3">3D isometric env</h3>
+                    <h3 class="font-semibold text-xl mt-5 mb-3 dark:text-white">3D isometric env</h3>
                     <p class="font-medium text-base text-secondary">isometric merupakan design mini dari sebuah ide, baik itu isometric land, pulau, kantor, ruangan game, dan kota-kota.</p>
                 </div>
             </div>
@@ -160,12 +181,12 @@
     <!-- galery section end -->
 
     <!-- client section start -->
-    <section id="client" class="pt-36 pb-32 bg-slate-800">
+    <section id="client" class="pt-36 pb-32 bg-slate-800 dark:bg-slate-300">
         <div class="container">
             <div class="w-full px-4"></div>
             <div class="max-w-xl mx-auto text-center mb-16">
                 <h4 class="font-semibold text-lg text-primary mb-2">Clients</h4>
-                <h2 class="font-bold text-white text-3xl mb-4 sm:text-4xl lg:text-5xl">Tempat kami jual design</h2>
+                <h2 class="font-bold text-white text-3xl mb-4 sm:text-4xl lg:text-5xl dark:text-dark">Tempat kami jual design</h2>
                 <p class="font-medium text-md text-secondary md:text-lg">kami menjual design kami kepada pelanggan di berbagai flatform market</p>
             </div>
 
@@ -190,12 +211,12 @@
     <!-- client section end -->
 
     <!-- blog section start -->
-    <section id="blog" class="pt-36 pb-32 bg-slate-100">
+    <section id="blog" class="pt-36 pb-32 bg-slate-100 dark:bg-dark">
         <div class="container">
             <div class="w-full px-4">
                 <div class="max-w-xl mx-auto text-center mb-16">
                     <h4 class="font-semibold text-lg text-primary mb-2">Blog</h4>
-                    <h2 class="font-bold text-dark text-3xl mb-4 sm:text-4xl lg:text-5xl">Update terbaru kami</h2>
+                    <h2 class="font-bold text-dark text-3xl mb-4 sm:text-4xl lg:text-5xl dark:text-white">Update terbaru kami</h2>
                     <p class="font-medium text-md text-secondary md:text-lg">
                         kami juga menulis beberapa update tentang diri kami dalam bentuk blog
                     </p>
@@ -204,11 +225,11 @@
 
             <div class="flex flex-wrap">
                 <div class="w-full px-4 lg:w-1/2 xl:w-1/3">
-                    <div class="bg-white rounded-xl shadow-lg overflow-hidden mb-10">
+                    <div class="bg-white dark:bg-slate-800 rounded-xl shadow-lg overflow-hidden mb-10">
                         <img src="img/blog/3.jpg" alt="break" class="w-full">
                         <div class="py-8 px-6">
                             <h3>
-                                <a href="#" class="block mb-3 font-semibold text-xl text-dark hover:text-primary truncate">Break Client</a>
+                                <a href="#" class="block mb-3 font-semibold text-xl text-dark hover:text-primary truncate dark:text-white">Break Client</a>
                             </h3>
                             <p class="font-medium text-base text-secondary mb-6">Sebelum memulai project dari client biasanya kami melakukan diskusi dalam berbagai hal</p>
                             <a href="#" class="font-medium text-sm text-white bg-primary py-3 px-4 rounded-lg hover:opacity-80">Baca Selengkapnya</a>
@@ -216,11 +237,11 @@
                     </div>
                 </div>
                 <div class="w-full px-4 lg:w-1/2 xl:w-1/3">
-                    <div class="bg-white rounded-xl shadow-lg overflow-hidden mb-10">
+                    <div class="bg-white dark:bg-slate-800 rounded-xl shadow-lg overflow-hidden mb-10">
                         <img src="img/blog/rev1.jpg" alt="Proses Order" class="w-full">
                         <div class="py-8 px-6">
                             <h3>
-                                <a href="#" class="block mb-3 font-semibold text-xl text-dark hover:text-primary truncate">Proses Order</a>
+                                <a href="#" class="block mb-3 font-semibold text-xl text-dark hover:text-primary truncate dark:text-white">Proses Order</a>
                             </h3>
                             <p class="font-medium text-base text-secondary mb-6">Orderan yang kami terima akan kami proses, dan kerjakan dalam waktu yang singkat</p>
                             <a href="#" class="font-medium text-sm text-white bg-primary py-3 px-4 rounded-lg hover:opacity-80">Baca Selengkapnya</a>
@@ -228,11 +249,11 @@
                     </div>
                 </div>
                 <div class="w-full px-4 lg:w-1/2 xl:w-1/3">
-                    <div class="bg-white rounded-xl shadow-lg overflow-hidden mb-10">
+                    <div class="bg-white dark:bg-slate-800 rounded-xl shadow-lg overflow-hidden mb-10">
                         <img src="img/blog/rev.jpg" alt="deliver" class="w-full">
                         <div class="py-8 px-6">
                             <h3>
-                                <a href="#" class="block mb-3 font-semibold text-xl text-dark hover:text-primary truncate">Deliver and Revision</a>
+                                <a href="#" class="block mb-3 font-semibold text-xl text-dark hover:text-primary truncate dark:text-white">Deliver and Revision</a>
                             </h3>
                             <p class="font-medium text-base text-secondary mb-6">Apakah design anda sudah sesuai ? atau ada revisi, beri tahu kami</p>
                             <a href="#" class="font-medium text-sm text-white bg-primary py-3 px-4 rounded-lg hover:opacity-80">Baca Selengkapnya</a>
@@ -245,12 +266,12 @@
     <!-- blog section end -->
 
     <!-- contack section start -->
-    <section id="contact" class="pt-36 pb-32">
+    <section id="contact" class="pt-36 pb-32 dark:bg-slate-800">
         <div class="container">
             <div class="w-full px-4">
                 <div class="max-w-xl mx-auto text-center mb-16">
                     <h4 class="font-semibold text-lg text-primary mb-2">Contact</h4>
-                    <h2 class="font-bold text-dark text-3xl mb-4 sm:text-4xl lg:text-5xl">Hubungi Kami</h2>
+                    <h2 class="font-bold text-dark text-3xl mb-4 sm:text-4xl lg:text-5xl dark:text-white">Hubungi Kami</h2>
                     <p class="font-medium text-md text-secondary md:text-lg">
                         Jika anda mau order design atau tanya-tanya hubungi kami di bawah ini
                     </p>
@@ -363,6 +384,11 @@
     </footer>
     <!-- footer end -->
 
+    <!-- back to top start -->
+    <a href="#home" class="fixed z-[9999] bottom-4 hidden justify-center items-center right-4 p-4 h-14 w-14 bg-primary rounded-full hover:animate-pulse" id="to-top">
+        <span class="block w-5 h-5 border-t-2 border-l-2 rotate-45 mt-2"></span>
+    </a>
+    <!-- back to top end -->
 
     <script src="dist/js/script.js">
 
